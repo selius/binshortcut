@@ -18,11 +18,10 @@ public class ShortcutActivity extends Activity {
 		getCreateButton().setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				Intent shortcutIntent =
-						new Intent("ru.selius.binshortcut.RUN_INTENT");
+				Intent shortcutIntent = new Intent(Consts.RUN_INTENT_NAME);
 				shortcutIntent.addCategory(Intent.CATEGORY_DEFAULT);
 				shortcutIntent.putExtra(
-					"cmd", getCmdEdit().getText().toString());
+					Consts.INTENT_EXTRA_CMD, getCmdEdit().getText().toString());
 
 				Intent intent = new Intent();
 				intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);

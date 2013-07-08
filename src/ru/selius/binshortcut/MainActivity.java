@@ -16,10 +16,10 @@ public class MainActivity extends Activity {
 		if (i == null)
 			return;
 
-		if (!i.getAction().equals("ru.selius.binshortcut.RUN_INTENT"))
+		if (!i.getAction().equals(Consts.RUN_INTENT_NAME))
 			return;
 
-		String cmd = i.getExtras().getString("cmd");
+		String cmd = i.getExtras().getString(Consts.INTENT_EXTRA_CMD);
 		try {
 			getMsgView().setText("Process is running...");
 			Process p = Runtime.getRuntime().exec(cmd);
