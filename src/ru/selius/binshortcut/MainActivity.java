@@ -1,19 +1,16 @@
 package ru.selius.binshortcut;
 
-import android.app.*;
-import android.content.*;
-import android.os.*;
-import java.io.*;
-
-import java.lang.Process;
-import android.widget.*;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
 
 		Intent i = getIntent();
 		if (i == null)
@@ -32,8 +29,8 @@ public class MainActivity extends Activity {
 		} finally {
 			finish();
 		}
-    }
-	
+	}
+
 	private TextView getMsgView() {
 		return (TextView) findViewById(R.id.msgView);
 	}
